@@ -20,19 +20,21 @@ import Button from './Button.vue'
       type="number"
       label="Дата рождения"
       placeholder="Укажите дату рождения"
+      :validator="string().required('Пожалуйста, заполните поле').email('Неверный формат даты')"
     />
     <Field
       name="telephone"
       type="tel"
       label="Номер телефона"
       placeholder="Введите номер телефона"
+      :validator="string().required('Пожалуйста, заполните поле').email('Телефон не корректный')"
     />
     <Field
       name="email"
       type="email"
       label="Электронная почта"
       placeholder="Укажите электронную почту"
-      :validator="string().required('sds').email('dsds')"
+      :validator="string().required('Пожалуйста, заполните поле').email('E-mail не корректный')"
     />
     <Button
       label="Далее"
